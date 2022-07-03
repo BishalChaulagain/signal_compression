@@ -2,7 +2,7 @@
 ### Licensed under the CC BY-NC-SA 4.0 license (https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode).
 import time
 from collections import OrderedDict
-from GAN_Compression.options.train_Q_options import TrainOptions
+from options.train_Q_options import TrainOptions
 from datasets.data_loader import CreateDataLoader
 from models.models import create_model
 import utils.util as util
