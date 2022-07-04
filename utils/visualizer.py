@@ -1,16 +1,15 @@
-### Copyright (C) 2017 NVIDIA Corporation. All rights reserved.
-### Licensed under the CC BY-NC-SA 4.0 license (https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode).
 import numpy as np
 import os
 import ntpath
 import time
-from . import util
-from . import html
+import util as util
+from html import html
 import scipy.misc
-try:
-    from StringIO import StringIO  # Python 2.7
-except ImportError:
-    from io import BytesIO         # Python 3.x
+from io import BytesIO  
+# try:
+#     from StringIO import StringIO  # Python 2.7
+# except ImportError:
+#    from io import BytesIO         # Python 3.x
 
 class Visualizer():
     def __init__(self, opt):
@@ -40,11 +39,12 @@ class Visualizer():
         if self.tf_log: # show images in tensorboard output
             img_summaries = []
             for label, image_numpy in visuals.items():
+                s = BytesIO()
                 # Write the image to a string
-                try:
-                    s = StringIO()
-                except:
-                    s = BytesIO()
+                # try:
+                #     s = StringIO()
+                # except:
+                #    s = BytesIO()
                 scipy.misc.toimage( ).save(s, format="jpeg")
                 # Create an Image object
                 img_sum = self.tf.Summary.Image(encoded_image_string=s.getvalue(), height=image_numpy.shape[0], width=image_numpy.shape[1])

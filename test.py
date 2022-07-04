@@ -1,9 +1,7 @@
-### Copyright (C) 2017 NVIDIA Corporation. All rights reserved. 
-### Licensed under the CC BY-NC-SA 4.0 license (https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode).
 import os
 from collections import OrderedDict
 from GAN_Compression.options.test_options import TestOptions
-from GAN_Compression.data.data_loader import CreateDataLoader
+from datasets.data_loader import CreateDataLoader
 from models.models import create_model
 import utils.util as util
 from utils.visualizer import Visualizer

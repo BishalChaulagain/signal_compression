@@ -1,12 +1,10 @@
-### Copyright (C) 2017 NVIDIA Corporation. All rights reserved.
-### Licensed under the CC BY-NC-SA 4.0 license (https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode).
 import time
 from collections import OrderedDict
 from options.train_Q_options import TrainOptions
-from data.data_loader import CreateDataLoader
+from datasets.data_loader import CreateDataLoader
 from models.models import create_model
-import util.util as util
-from util.visualizer import Visualizer
+import utils.util as util
+from utils.visualizer import Visualizer
 import os
 import numpy as np
 import torch
